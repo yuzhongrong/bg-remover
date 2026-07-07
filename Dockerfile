@@ -4,9 +4,7 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y libgl1 libglib2.0-0 && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir fastapi uvicorn rembg pillow onnxruntime
-
-RUN python -c "import os; os.environ['U2NET_HOME'] = '/app/models'; from rembg import new_session; new_session('u2net')"
+RUN pip install --no-cache-dir fastapi uvicorn rembg pillow onnxruntime python-multipart
 
 COPY main.py .
 
