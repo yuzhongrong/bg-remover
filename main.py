@@ -4,9 +4,10 @@ from fastapi import FastAPI, UploadFile, File, Response
 from PIL import Image
 from rembg import remove, new_session
 
+os.environ["U2NET_HOME"] = "/app/models"
+
 app = FastAPI()
 
-os.environ["U2NET_HOME"] = "/app/models"
 session = new_session("isnet-general-use")
 
 @app.post("/api/remove-bg")
