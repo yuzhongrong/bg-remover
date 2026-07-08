@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y libgl1 libglib2.0-0 && rm -rf /var/lib/
 RUN pip install --no-cache-dir fastapi uvicorn rembg pillow onnxruntime python-multipart
 
 # 在构建阶段预下载模型
-RUN python -c "import os; os.environ['U2NET_HOME'] = '/app/models'; from rembg import new_session; new_session('u2net')"
+RUN python -c "import os; os.environ['U2NET_HOME'] = '/app/models'; from rembg import new_session; new_session('isnet-general-use')"
 
 COPY main.py .
 

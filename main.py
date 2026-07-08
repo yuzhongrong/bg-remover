@@ -8,7 +8,7 @@ os.environ["U2NET_HOME"] = "/app/models"
 
 app = FastAPI()
 
-session = new_session("u2net")
+session = new_session("isnet-general-use")
 
 @app.get("/health")
 def health():
